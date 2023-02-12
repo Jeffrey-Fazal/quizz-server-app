@@ -1,5 +1,7 @@
 # Quizz App
 
+The server is made to be used with [the reactjs client app](https://github.com/Jeffrey-Fazal/quiz-client-app).
+
 Welcome to the Quizz App! This is a full-stack web application that allows users to take quizzes and see their scores.
 Technology Stack
 
