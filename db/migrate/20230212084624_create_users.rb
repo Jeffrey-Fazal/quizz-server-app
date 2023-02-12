@@ -1,4 +1,5 @@
 class CreateUsers < ActiveRecord::Migration[5.2]
+  # We'll need to decide where want to keep users scores
   def change
     create_table :users do |t|
       t.string :name

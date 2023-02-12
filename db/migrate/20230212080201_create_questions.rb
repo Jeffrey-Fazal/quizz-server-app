@@ -1,4 +1,5 @@
 class CreateQuestions < ActiveRecord::Migration[5.2]
+  # Created migration for questions
   def change
     create_table :questions do |t|
       t.string :content
