@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   # Restful routes for all users
   resources :users
 
+  # Nested route to find scores for a paticular user
+  # GET /users/:user_id/user_score
+  resources :users do
+    member do
+      get :user_score
+    end
+  end
+  
+
   # Scores endpoints (show scores and update them only)
   resources :scores, only: [:update, :index]
 

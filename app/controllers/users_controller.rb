@@ -14,6 +14,15 @@ class UsersController < ApplicationController
         render json: @user, status: :ok
     end
 
+    # GET a single users score
+
+    def user_score
+        user = User.find(params[:user_id])
+        score = user.score
+        render json: score
+    end
+      
+
     # POST /users
     def create
         @user = User.new(user_params)
