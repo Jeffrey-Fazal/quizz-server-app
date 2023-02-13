@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :scores
 # Users can only be created with a secure password, email and username. | Frontend should reflect that something is missing.
     has_secure_password
 

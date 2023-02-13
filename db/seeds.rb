@@ -18,17 +18,17 @@ Question.create(content: 'What is the primary habitat of the Monarch butterfly?'
 Question.create(content: 'What is the primary food source for the Monarch butterfly during its larval stage?', option1:'Nectar from flowers', option2:'Leaves of milkweed', option3:'Fruit', option4:'Insects', correct_answer:'Leaves of milkweed', category:'butterflies')
 
 # Add users once migrations are completed
-# names = ["Jane Doe", "John Doe", "Bob Smith"]
-# usernames = ["janedoe", "johndoe", "bobsmith"]
-# emails = ["janedoe@example.com", "johndoe@example.com", "bobsmith@example.com"]
-# scores = [10, 20, 30]
+names = ["Jane Doe", "John Doe", "Bob Smith"]
+usernames = ["janedoe", "johndoe", "bobsmith"]
+emails = ["janedoe@example.com", "johndoe@example.com", "bobsmith@example.com"]
+scores = [10, 20, 30]
 
-# names.each_with_index do |name, index|
-#   user = User.create(
-#     name: name,
-#     username: usernames[index],
-#     email: emails[index],
-#     password: "chicken"
-#   )
-#   Score.create(user: user, score: scores[index])
-# end
+names.each_with_index do |name, index|
+  user = User.create(
+    name: name,
+    username: usernames[index],
+    email: emails[index],
+    password: "chicken"
+  )
+  Score.create(user: user, score: scores[index])
+end
