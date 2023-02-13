@@ -9,4 +9,10 @@ class QuestionsController < ApplicationController
         books = Question.where(category:"books")
         render json: books, status: :ok 
     end
+    # Allows a specific category to be pulled
+    def index_category
+        questions = Question.where(category: params[:name])
+        render json: questions
+      end
+      
 end

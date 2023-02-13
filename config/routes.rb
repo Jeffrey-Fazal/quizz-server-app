@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     end
   end
   
-
   # Scores endpoints (show scores and update them only)
   resources :scores, only: [:update, :index]
 
@@ -24,7 +23,9 @@ Rails.application.routes.draw do
   # Route for login authentication
   post '/auth/login', to: 'authentication#login'
 
-  # Resful routes for all questions
+  # Endpoints for questions
   resources :questions  
+
+  get '/category/:name', to: 'questions#index_category'
 
 end
