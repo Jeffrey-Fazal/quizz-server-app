@@ -4,6 +4,8 @@ class ApplicationController < ActionController::API
     # Decide on how JSON API endpoints should be handled 
     # before_action :authenticate_request
 
+
+
     private
         def authenticate_request
             header = request.headers["Authorization"]

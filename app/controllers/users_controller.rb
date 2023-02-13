@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     # Controls for managing users via the API
-    skip_before_action :authenticate_request, only: [:create]
+    # Not needed: skip_before_action :authenticate_request, only: [:create]
     before_action :set_user, only: [:show, :update, :destroy]
 
     # GET /users

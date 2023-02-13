@@ -1,6 +1,6 @@
 class AuthenticationController < ApplicationController
     # Handles authentication based on username and JWT token
-    skip_before_action :authenticate_request
+    # Not needed: skip_before_action :authenticate_request
 
     # POST /auth/login
     def login
