@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     # Controls for managing users via the API
     # Not needed: skip_before_action :authenticate_request, only: [:create]
     before_action :set_user, only: [:show, :update, :destroy]
+    require 'jwt_helper'
 
     # GET /users
     def index
@@ -61,7 +62,20 @@ class UsersController < ApplicationController
         scores = users.map { |user| { id: user.id, name: user.name, scores: user.scores } }
         render json: scores
       end
-      
+
+    def verify_token
+        token = request.headers['Authorization'].split(' ').last
+        payload = verify_jwt(token)
+        if payload
+        # Token is valid
+        user_id = payload['user_id']
+        user = User.find(user_id)
+        render json: { name: user.name, email: user.email }, status: :ok
+        else
+        # Token is not valid
+        render json: { error: 'Unauthorized' }, status: :unauthorized
+        end
+    end
 
     private
         def user_params

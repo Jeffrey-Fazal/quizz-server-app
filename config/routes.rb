@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  # renders plain text
   root to: "pages#index"
 
   # Restful routes for all users
   resources :users
 
-  # Nested route to find scores for a paticular user
-  # GET /users/:user_id/user_score
+  get '/verify', to: 'users#verify_token'
+
+  # Clean routes
   resources :users do
+    get '/verify', to: 'users#verify_token', on: :collection
     member do
       get :user_score
     end
@@ -25,7 +26,5 @@ Rails.application.routes.draw do
 
   # Endpoints for questions
   resources :questions  
-
   get '/category/:name', to: 'questions#index_category'
-
 end
