@@ -61,7 +61,7 @@ class UsersController < ApplicationController
         users = User.all
         scores = users.map { |user| { id: user.id, name: user.name, scores: user.scores } }
         render json: scores
-      end
+    end
 
     def verify_token
         token = request.headers['Authorization'].split(' ').last
