@@ -63,6 +63,7 @@ class UsersController < ApplicationController
         render json: scores
     end
 
+    # verifies a token using verify_jwt token helper.
     def verify_token
         token = request.headers['Authorization'].split(' ').last
         payload = verify_jwt(token)
