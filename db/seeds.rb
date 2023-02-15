@@ -30,31 +30,19 @@ Question.create(content: 'Is it better to stay at home and learn or risk getting
 Question.create(content: 'Is Hong Kong part of China?', option1:'Yes', option2:'No', option3:'Undecided', option4:'It depends', correct_answer:'Yes', category:'controversy')
 Question.create(content: 'Was Poland part of Nazi Germany in 1940?', option1:'Yes', option2:'No', option3:'Undecided', option4:'It depends', correct_answer:'Yes', category:'history')
 
-
-
 # Random categories
 Question.create(content: 'This author lives in a castle and is transphobic?', option1:'Dr. Seuss', option2:'Charles Dickens', option3:'JK Rowling', option4:'Roalad Dahl', correct_answer:'JK Rowling', category:'authors')
 
 # Echo number of questions
 puts "Created: #{Question.count} questions"
 
-
-# User.destroy_all
-# Add users once migrations are completed
-names = ["Jane Doe", "John Doe", "Bob Smith"]
-usernames = ["janedoe", "johndoe", "bobsmith"]
-emails = ["janedoe@example.com", "johndoe@example.com", "bobsmith@example.com"]
-scores = [10, 20, 30]
-
-names.each_with_index do |name, index|
-  user = User.create(
-    name: name,
-    username: usernames[index],
-    email: emails[index],
-    password: "chicken"
-  )
-  Score.create(user: user, score: scores[index])
-end
+User.destroy_all
+User.create(name: "jeff", email: "jeff@ga.co", username: "jeff", score: rand(100..1000), password: "password123")
+User.create(name: "bree", email: "bree@ga.co", username: "bree", score: rand(100..1000), password: "password456")
+User.create(name: "joel", email: "joel@ga.co", username: "joel", score: rand(100..1000), password: "password789")
+User.create(name: "wayne", email: "wayne@ga.co", username: "wayne", score: rand(100..1000), password: "password1011")
+User.create(name: "nicole", email: "nicole@ga.co", username: "nicole", score: rand(100..1000), password: "password1213")
+User.create(name: "nick", email: "nick@ga.co", username: "nick", score: rand(100..1000), password: "password1415")
 
 # Echo new users
 
