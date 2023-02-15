@@ -27,3 +27,6 @@ This project was made as a collaboration between Jeffrey (https://github.com/Jef
 # License
 
 This Quizz App is currently in development and is subject to Australian copyright law. No license has been specified at this time.
+
+
+
